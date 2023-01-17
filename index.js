@@ -3,12 +3,15 @@ const db = require('./db');
  const ProdutoRouter = require('./routes/Produto')
     
 const express = require('express')
-
+var cors = require('cors')
 
 
 
 const app = express()
-
+app.use(cors())
+app.get('/',(req,res)=>{
+    res.send("Olá mundo")
+})
 app.use(express.json())
 app.use('/',ProdutoRouter)
 app.use('/', ProdutoRouter)
