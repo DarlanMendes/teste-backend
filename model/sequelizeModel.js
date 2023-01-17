@@ -14,11 +14,20 @@ const Produto = sequelize.define('produto', {
         allowNull: false
     },
     preco: {
-        type: Sequelize.DOUBLE
+        type: Sequelize.DOUBLE,
+        allowNull: false,
     },
-    descricao: Sequelize.STRING
+    descricao:{
+        type:Sequelize.STRING,
+        allowNull: false,
+    },
+    disponivel:{
+        type:Sequelize.BOOLEAN,
+        defaultValue:true
+    }
+
 })
- //Produto.sync();
+ Produto.sync();
     
 module.exports = Produto;
 
