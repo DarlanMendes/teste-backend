@@ -24,12 +24,13 @@ exports.listProduto = async function(req,res){
     }
 }
 exports.newProduto = async function(req, res){
-    const {nome,preco,descricao}= req.body
+    const {nome,preco,descricao,imagem}= req.body
    
     let produtoNovo={
         nome,
         preco,
-        descricao
+        descricao,
+        imagem
     }
     
     if(produtoNovo){
