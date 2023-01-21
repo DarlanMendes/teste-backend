@@ -18,11 +18,11 @@ const Produto = sequelize.define('produto', {
         allowNull: false,
     },
     descricao:{
-        type:Sequelize.TEXT,
+        type:Sequelize.STRING,
         allowNull: false,
     },
     imagem:{
-        type:Sequelize.TEXT,
+        type:Sequelize.STRING,
         allowNull:false
     },
     disponivel:{

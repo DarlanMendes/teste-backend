@@ -4,6 +4,7 @@ exports.getProduto = async function(id){
     //procura elemento pela primary key
     try{
         let produto = await Produto.findByPk(id)
+        console.log(produto)
         return produto
     }catch(e){
         return e
