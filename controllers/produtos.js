@@ -28,7 +28,7 @@ exports.newProduto = async function(req, res){
    
     let produtoNovo={
         nome,
-        preco,
+        preco:Number(preco),
         descricao,
         imagem
     }
