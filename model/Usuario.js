@@ -1,8 +1,9 @@
+//criar a tabela para clientes
 
 const Sequelize = require('sequelize');
 const sequelize = require('../db');
 
-const Produto = sequelize.define('produto', {
+const Usuario = sequelize.define('usuario', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -13,22 +14,21 @@ const Produto = sequelize.define('produto', {
         type: Sequelize.STRING,
         allowNull: false
     },
-    preco: {
-        type: Sequelize.DOUBLE,
-        allowNull: false,
-    },
-    descricao:{
+    email:{
         type:Sequelize.STRING,
         allowNull: false,
     },
-    disponivel:{
-        type:Sequelize.BOOLEAN,
-        defaultValue:true
+    password:{
+        type:Sequelize.STRING,
+    },
+    role:{
+        type:Sequelize.STRING,
+        defaultValue:'cliente'
     }
 
 })
- Produto.sync();
+Usuario.sync();
     
-module.exports = Produto;
+module.exports = Usuario;
 
  

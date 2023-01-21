@@ -1,4 +1,4 @@
-let Produto = require('../model/sequelizeModel')
+let Produto = require('../model/Produto')
 
 exports.getProduto = async function(id){
     //procura elemento pela primary key
