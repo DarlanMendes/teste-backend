@@ -22,15 +22,19 @@ exports.criaUsuario = async function(req, res){
 }
 exports.loginUsuario = async function(req, res){
     const{ email, password}= req.body
+   
     if(email.length>6&&password){
-       
-            let usuarioLogado = await UsuarioService.loginUsuario(email,password)
-           if(usuarioLogado){
-            res.json(usuarioLogado)
-           }
-           else{
-            res.json({erro:"credenciais inválidas"})
-           }
+            try{
+                let usuarioLogado = await UsuarioService.loginUsuario(email,password)
+           
+                if(usuarioLogado){
+                 res.json(usuarioLogado)
+                }
+               
+            }catch(e){
+                res.json({erro:e})
+            }
+           
            
        
        

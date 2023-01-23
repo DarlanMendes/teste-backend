@@ -13,7 +13,7 @@ exports.isAuthenticated= async function(req,res,next){
     if(token){
      await jwt.verify(token,process.env.JWT_SECRET,(erro,decoded)=>{
             if(decoded){
-                //res.json(decoded)
+                
                 req.id_usuario = decoded.sub
                 next()
             }
