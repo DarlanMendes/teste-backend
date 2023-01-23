@@ -31,7 +31,7 @@ exports.loginUsuario = async function (email, password) {
 
     if (email && password) {
        
-        try{
+        
             let usuarioBanco = await Usuario.findOne({ where: { email:email } })
             console.log('usuarioBanco', usuarioBanco)
             let passwordConfere = await bcrypt.compare(password, usuarioBanco.password)
@@ -61,9 +61,9 @@ exports.loginUsuario = async function (email, password) {
                 token
             }
         }
-        }catch(e){
-            return e
-        }
+        
+           
+        
        
         
 
