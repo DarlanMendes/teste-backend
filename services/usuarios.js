@@ -30,10 +30,11 @@ exports.loginUsuario = async function (email, password) {
     //Verifica usuario e devolve token
 
     if (email && password) {
+        console.log('teste',email,password)
         try{
             let usuarioBanco = await Usuario.findOne({ where: { email } })
             let passwordConfere = await bcrypt.compare(password, usuarioBanco.password)
-      
+            console.log("teste 2", usuarioBanco, passwordConfere)
         if (passwordConfere) {
             // gera token
             
