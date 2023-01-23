@@ -27,7 +27,7 @@ exports.loginUsuario = async function(req, res){
             try{
                 
                 let usuarioLogado = await UsuarioService.loginUsuario(email,password)
-                console.log(usuarioLogado)
+                
                 if(usuarioLogado){
                  res.json(usuarioLogado)
                 }

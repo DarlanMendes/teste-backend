@@ -33,7 +33,7 @@ exports.loginUsuario = async function (email, password) {
        
         try{
             let usuarioBanco = await Usuario.findOne({ where: { email:email } })
-            return usuarioBanco
+            
             let passwordConfere = await bcrypt.compare(password, usuarioBanco.password)
           
         if (passwordConfere) {
