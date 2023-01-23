@@ -33,9 +33,9 @@ exports.loginUsuario = async function (email, password) {
        
         try{
             let usuarioBanco = await Usuario.findOne({ where: { email:email } })
-            
+            console.log('usuarioBanco', usuarioBanco)
             let passwordConfere = await bcrypt.compare(password, usuarioBanco.password)
-          
+            console.log('passwordConfere', passwordConfere)
         if (passwordConfere) {
             // gera token
             
