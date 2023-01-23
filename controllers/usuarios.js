@@ -36,3 +36,13 @@ exports.loginUsuario = async function(req, res){
        
     }
 }
+exports.listUsuario = async function (req,res){
+    let {id_usuario}=req
+   let usuario = await UsuarioService.listUsuario(id_usuario)
+    if(usuario){
+        res.json(usuario)
+    }else{
+        res.json({erro:'usuario invalido'})
+    }
+    
+}

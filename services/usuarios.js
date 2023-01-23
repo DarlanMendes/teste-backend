@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const dotenv = require('dotenv')
 
+//dotenv.config({path:'../../.env'})
 dotenv.config()
 exports.criaUsuario = async function (nome, email, password, role) {
     //Verifica se falta alguma informcaoa
@@ -61,4 +62,16 @@ exports.loginUsuario = async function (email, password) {
 
     }
 
+}
+exports.listUsuario = async function(id_usuario){
+ let usuario = await Usuario.findByPk(id_usuario)
+ if(usuario){
+    return {
+        nome:usuario.nome,
+        email:usuario.email,
+        role:usuario.role
+    }
+ }else{
+    return {erro:"Usuario inexistente"}
+ }
 }

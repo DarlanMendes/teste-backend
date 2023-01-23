@@ -4,14 +4,14 @@ exports.getProduto = async function(id){
     //procura elemento pela primary key
     try{
         let produto = await Produto.findByPk(id)
-        console.log(produto)
+        //console.log(produto)
         return produto
     }catch(e){
         return e
     }
 }
 exports.listProduto = async function(ordem,sentido){
-    console.log(ordem,sentido,'teste')
+    //console.log(ordem,sentido,'teste')
     try{
         if(ordem,sentido){
             let listaDeProdutos = await Produto.findAll({order:[[`${ordem}`,`${sentido}`]]})
@@ -27,7 +27,7 @@ exports.newProduto = async function(produtoNovo){
    // Cria um novo produto
     try{
         let produtoCriado = await Produto.create(produtoNovo)
-        console.log(produtoNovo)
+        //console.log(produtoNovo)
         return produtoCriado
     }catch(e){
         return e

@@ -1,5 +1,8 @@
-require('dotenv').config()
+const dotenv = require('dotenv');
+//dotenv.config({path:'../.env'})
+dotenv.config()
 const Sequelize = require('sequelize');
+
 const sequelize = new Sequelize(process.env.LOGIN_POSTGRES, {dialect: 'postgres'});
 
 sequelize.authenticate().then(()=>{
