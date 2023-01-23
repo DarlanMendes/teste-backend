@@ -25,8 +25,9 @@ exports.loginUsuario = async function(req, res){
    
     if(email.length>6&&password){
             try{
+                
                 let usuarioLogado = await UsuarioService.loginUsuario(email,password)
-           
+                console.log(usuarioLogado)
                 if(usuarioLogado){
                  res.json(usuarioLogado)
                 }
