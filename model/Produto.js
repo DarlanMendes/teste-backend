@@ -1,6 +1,8 @@
 
 const Sequelize = require('sequelize');
 const sequelize = require('../db');
+const Categoria = require('./Categoria')
+
 
 const Produto = sequelize.define('produto', {
     id: {
@@ -31,7 +33,13 @@ const Produto = sequelize.define('produto', {
     }
 
 })
- Produto.sync();
+Produto.belongsTo(Categoria, {
+    constraint: true,
+    foreignKey: 'idCategoria'
+})
+
+
+ Produto.sync({force:true});
     
 module.exports = Produto;
 
